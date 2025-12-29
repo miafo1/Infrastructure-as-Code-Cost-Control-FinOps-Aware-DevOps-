@@ -50,16 +50,16 @@ jobs:
 
       # Infracost Integration
       - name: Setup Infracost
-        uses: infracost/actions/setup@v2
+        uses: infracost/actions/setup@v3
         with:
           api-key: ${{ secrets.INFRACOST_API_KEY }}
 
-      - name: Generate Infracost JSON
-        run: infracost breakdown --path tfplan --format json --out-file infracost.json
+      - name: Generate Infracost Cost Estimate
+        run: infracost breakdown --path . --format json --out-file /tmp/infracost.json
 
       - name: Post Infracost Comment
         if: github.event_name == 'pull_request'
-        uses: infracost/actions/comment@v2
+        uses: infracost/actions/comment@v3
         with:
-          path: terraform/infracost.json
+          path: /tmp/infracost.json
           behavior: update
