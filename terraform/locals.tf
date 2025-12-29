@@ -15,6 +15,6 @@ locals {
   }
 
   # Cost Optimization Constants
-  instance_type = "t3.micro" # Free Tier eligible in many regions
-  ebs_volume_size = 8        # GB
+  instance_type   = "t3.micro" # Free Tier eligible in many regions
+  ebs_volume_size = 8          # GB
 }
