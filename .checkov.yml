@@ -1,4 +1,4 @@
-check-path:
+directory:
   - terraform
 skip-check:
   - CKV_AWS_135 # Allow public IP for this minimal public demo
