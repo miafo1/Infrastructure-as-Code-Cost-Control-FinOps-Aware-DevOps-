@@ -26,6 +26,3 @@ This production-style Terraform project demonstrates how to build and manage AWS
 - **Instance Enforcement**: `lifecycle` preconditions block any instance type except `t2.micro/t3.micro`.
 - **EBS Optimization**: Uses `gp3` (20% cheaper than gp2) with minimal 8GB throughput.
 - **Tagging**: Every resource is tagged with `AutoTerminate=true` for automated cleanup jobs.
-
----
-*Created by Antigravity (FinOps DevOps Architect)*
