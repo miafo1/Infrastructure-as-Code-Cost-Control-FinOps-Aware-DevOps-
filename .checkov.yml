@@ -1,5 +1,4 @@
-directory:
-  - terraform
+
 skip-check:
   - CKV_AWS_135 # Allow public IP for this minimal public demo
   - CKV_AWS_8   # Allow basic logging without versioning for Free Tier demo
