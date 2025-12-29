@@ -16,9 +16,10 @@ module "iam" {
 module "ec2" {
   source = "./modules/ec2"
 
-  environment   = var.environment
-  instance_type = local.instance_type
-  subnet_id     = module.vpc.public_subnet_id
+  environment          = var.environment
+  instance_type        = local.instance_type
+  subnet_id            = module.vpc.public_subnet_id
+  iam_instance_profile = module.iam.instance_profile_name
 }
 
 module "s3" {

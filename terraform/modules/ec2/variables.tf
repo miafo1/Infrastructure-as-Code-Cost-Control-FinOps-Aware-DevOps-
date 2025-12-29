@@ -10,3 +10,9 @@ variable "subnet_id" {
 variable "environment" {
   type = string
 }
+
+variable "iam_instance_profile" {
+  description = "IAM Instance Profile to attach to EC2"
+  type        = string
+  default     = null
+}

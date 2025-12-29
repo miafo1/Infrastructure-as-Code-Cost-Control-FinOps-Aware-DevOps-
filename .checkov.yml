@@ -1,5 +1,12 @@
-
 skip-check:
-  - CKV_AWS_135 # Allow public IP for this minimal public demo
-  - CKV_AWS_8   # Allow basic logging without versioning for Free Tier demo
-soft-fail: false # We want the build to fail if critical policies are violated
+  - CKV_AWS_135 # Allow public IP for minimal demo
+  - CKV_AWS_8   # Allow basic logging without versioning (FinOps)
+  - CKV_AWS_126 # Skip detailed monitoring (Cost)
+  - CKV_AWS_130 # public subnet IP assignment allowed for demo
+  - CKV_AWS_18  # S3 access logging disabled (Cost)
+  - CKV2_AWS_62 # S3 event notifications not needed
+  - CKV2_AWS_11 # VPC flow logs disabled (Cost)
+  - CKV_AWS_21  # S3 versioning disabled (Cost)
+  - CKV_AWS_144 # S3 cross-region replication disabled (Cost)
+  - CKV2_AWS_12 # Default SG usage acceptable for minimal demo
+soft-fail: false

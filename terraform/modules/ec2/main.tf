@@ -17,7 +17,13 @@ resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
 
-  subnet_id = var.subnet_id
+  subnet_id            = var.subnet_id
+  iam_instance_profile = var.iam_instance_profile
+
+  metadata_options {
+    http_endpoint = "enabled"
+    http_tokens   = "required" # Enforce IMDSv2 (CKV_AWS_79)
+  }
 
   root_block_device {
     volume_size = 8
