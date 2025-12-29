@@ -1,3 +1,4 @@
+
 skip-check:
   - CKV_AWS_135 # Allow public IP for minimal demo
   - CKV_AWS_8   # Allow basic logging without versioning (FinOps)
@@ -9,4 +10,5 @@ skip-check:
   - CKV_AWS_21  # S3 versioning disabled (Cost)
   - CKV_AWS_144 # S3 cross-region replication disabled (Cost)
   - CKV2_AWS_12 # Default SG usage acceptable for minimal demo
+  - CKV_AWS_145 # FinOps: Use AES256 (free) instead of KMS (costly)
 soft-fail: false
