@@ -1,12 +1,12 @@
 variable "aws_region" {
   description = "AWS region to deploy resources"
-  type        = "string"
+  type        = string
   default     = "us-east-1"
 }
 
 variable "environment" {
   description = "Execution environment (dev, staging, prod)"
-  type        = "string"
+  type        = string
   default     = "dev"
 
   validation {
@@ -17,6 +17,6 @@ variable "environment" {
 
 variable "aws_account_id" {
   description = "AWS Account ID (used for unique naming)"
-  type        = "string"
+  type        = string
   default     = "123456789012" # Placeholder
 }
