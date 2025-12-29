@@ -48,18 +48,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: us-east-1
 
-      # Infracost Integration
-      - name: Setup Infracost
-        uses: infracost/actions/setup@v3
-        with:
-          api-key: ${{ secrets.INFRACOST_API_KEY }}
-
-      - name: Generate Infracost Cost Estimate
-        run: infracost breakdown --path . --format json --out-file /tmp/infracost.json
-
-      - name: Post Infracost Comment
-        if: github.event_name == 'pull_request'
-        uses: infracost/actions/comment@v3
-        with:
-          path: /tmp/infracost.json
-          behavior: update
+      # Cost estimation can be added later with Infracost CLI locally
+      - name: Show Plan Summary
+        run: |
+          echo "✅ Terraform plan completed successfully"
+          echo "📊 Review the plan output above for cost implications"
